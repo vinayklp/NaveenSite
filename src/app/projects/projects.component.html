@@ -1,0 +1,15 @@
+<h1>Our Projects</h1>
+<div id="projects">     
+    <div class="row container-fluid align-self-center">        
+        <div class="col-4" *ngFor="let project of projects">
+          <div class="card">              
+            <img src="../../assets/house.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title ">{{project.Title}}</h5>
+              <p id="cardtext" class="card-text ">{{project.Description}}</p>
+              <a href="#"><label>Read more</label></a>
+            </div>
+          </div>
+        </div>        
+      </div> 
+ </div> 
