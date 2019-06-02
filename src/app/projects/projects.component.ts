@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProjectModule } from '../project/project.module';
+import { ProjectDetailComponent } from '../project-detail/project-detail.component';
+import { ProjectService } from '../project.service';
 
 @Component({
   selector: 'app-projects',
@@ -8,15 +10,9 @@ import { ProjectModule } from '../project/project.module';
 })
 export class ProjectsComponent implements OnInit {
   projects: ProjectModule[] 
-  constructor() { }
+  constructor(private projectService : ProjectService) { }
 
   ngOnInit() {
-    this.projects = [{"Description":"hfdhjdhdgsjsajdagdnbhjjhjh","Title":"fjdhj","ImgSrc":"dfhjdh"},
-    {"Description":"hfdhjdh","Title":"fjdhj","ImgSrc":"dfhjdh"},
-    {"Description":"hfdhjdh","Title":"fjdhj","ImgSrc":"dfhjdh"},
-    {"Description":"hfdhjdh","Title":"fjdhj","ImgSrc":"dfhjdh"},
-    {"Description":"hfdhjdh","Title":"fjdhj","ImgSrc":"dfhjdh"}
-  ];
+    this.projects = this.projectService.getProjects();
   }
-
 }
